@@ -6,8 +6,7 @@ Shortcut: `ctrl` + `⌥` + `⌘` + `T`
 
 Sketch will then ask you for a export location. Choose it, you then also need to authorize Sketch to write to that location once.
 
-Sketch will also ask you for a base font size. That way, font sizes can be specified in `rem` if you like.
-To do so, you need to change the setting from `false` to `true`:
+You can also make use of "rem" by entering a base font size. That way, font sizes can be specified in `rem` if you like. To do so, you need to change the setting from `false` to `true`:
 
 `com.getflourish.css.formatOptions.useRelativeFontSize = true;`
 
