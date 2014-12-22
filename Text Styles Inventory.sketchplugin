@@ -1,0 +1,22 @@
+// init (control alt cmd t)
+
+#import 'inventory.js'
+
+// use "rem" for font sizes
+com.getflourish.css.formatOptions.useRelativeFontSize = false;
+
+// file name of the exported file
+var filename = "typography.css"
+
+// let the user choose the export location
+var fileURL = com.getflourish.common.fileSaver();
+path = fileURL.path();
+
+// get authorization to write to the export folder
+new AppSandbox().authorize(path, function () {
+
+	// generate the text styles and save them
+	com.getflourish.textStyleInventory.generate(path + "/" + filename);
+
+	doc.showMessage("Text Styles exported to " + path);
+});
