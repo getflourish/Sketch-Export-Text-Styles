@@ -2,7 +2,7 @@
 
 This plugin generates an overview of all your text styles and exports it as CSS.
 
-’ctrl’ + ’option’ + ’command’ + ’t’
+`ctrl` + `⌥` + `⌘` + `T`
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/974773/_keepalive/Sketch%20CSS.png)
 
