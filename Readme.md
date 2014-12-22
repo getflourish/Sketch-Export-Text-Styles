@@ -2,7 +2,9 @@
 
 This plugin generates an overview of all your text styles and exports it as CSS.
 
-`ctrl` + `⌥` + `⌘` + `T`
+Shortcut: `ctrl` + `⌥` + `⌘` + `T`
+
+Sketch will then ask you for a export location. Choose it, you then also need to authorize Sketch to write to that location once.
 
 Sketch will also ask you for a base font size. That way, font sizes can be specified in `rem` if you like.
 To do so, you need to change the setting from `false` to `true`:

@@ -49,7 +49,7 @@ com.getflourish = (function() {
     },
     addCheckeredBackground: function(artboard) {
       log(artboard)
-      var layer = artboard.addLayerOfType("rectangle").embedInShapeGroup();
+      var layer = artboard.addLayerOfType("rectangle");
       layer.frame().setWidth(artboard.frame().width());
       layer.frame().setHeight(artboard.frame().height());
       layer.setName("Background");
@@ -72,7 +72,7 @@ com.getflourish = (function() {
       return layer;
     },
     addSolidBackground: function (artboard, hex_string) {
-      var layer = artboard.addLayerOfType("rectangle").embedInShapeGroup();
+      var layer = artboard.addLayerOfType("rectangle");
       layer.frame().setWidth(artboard.frame().width());
       layer.frame().setHeight(artboard.frame().height());
       layer.style().fills().addNewStylePart();
@@ -1069,7 +1069,7 @@ com.getflourish = (function() {
     },
     addColorShape: function (artboard, color, width, height) {
       // add layer
-      var layer = artboard.addLayerOfType("rectangle").embedInShapeGroup();
+      var layer = artboard.addLayerOfType("rectangle");
       layer.frame().setWidth(width);
       layer.frame().setHeight(height);
       layer.style().fills().addNewStylePart();
@@ -1080,7 +1080,7 @@ com.getflourish = (function() {
     },
     addGradientShape: function (artboard, gradient, width, height) {
       // add layer
-      var layer = artboard.addLayerOfType("rectangle").embedInShapeGroup();
+      var layer = artboard.addLayerOfType("rectangle");
       layer.frame().setWidth(width);
       layer.frame().setHeight(height);
       layer.style().fills().addNewStylePart();
@@ -1308,7 +1308,7 @@ com.getflourish = (function() {
 
     createRuleSetStr: function (layer) {
 
-      var baseunit = com.getflourish.css.getBaseUnit();
+      if(com.getflourish.css.formatOptions.useRelativeFontSize == true) var baseunit = com.getflourish.css.getBaseUnit();
 
       var str = '';
 
@@ -1338,7 +1338,7 @@ com.getflourish = (function() {
 
         switch (property) {
           case "font-size":
-            if (com.getflourish.css.formatOptions.useRelativeFontSize) {
+            if (com.getflourish.css.formatOptions.useRelativeFontSize == true) {
               value = value / baseunit;
               declaration = property + ": " + value + "rem;";
             }
@@ -1843,9 +1843,6 @@ com.getflourish = (function() {
 
     },
     exportStyles: function (artboard, path) {
-
-      // ask for base unit
-      var baseunit = com.getflourish.css.getBaseUnit();
 
       // Document path
       if (doc.fileURL() != null) {
